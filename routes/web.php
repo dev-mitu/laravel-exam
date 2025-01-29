@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\StudentProfileController;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +44,16 @@ Route::post('/StudentProfile/Store', [StudentProfileController::class, 'StudentP
 Route::get('/StudentProfile/{studentprofile}/Edit', [StudentProfileController::class, 'StudentProfileEdit'])->name('studentprofile.edit');
 Route::put('/StudentProfile/Update/{studentprofile}', [StudentProfileController::class, 'StudentProfileUpdate'])->name('studentprofile.update');
 Route::delete('/StudentProfile/delete/{studentprofile}', [StudentProfileController::class, 'StudentProfileDelete'])->name('studentprofile.delete');
+
+
+
+
+Route::get('/', [AboutController::class, 'Index'])->name('abouts');
+Route::get('/About/Create', [AboutController::class, 'AboutCreate'])->name('about.create');
+Route::post('/About/Store', [AboutController::class, 'aboutStore'])->name('about.store');
+Route::get('/About/{about}/Edit', [AboutController::class, 'aboutEdit'])->name('about.edit');
+Route::put('/About/Update/{about}', [AboutController::class, 'aboutUpdate'])->name('about.update');
+Route::delete('/About/delete/{about}', [AboutController::class, 'aboutDelete'])->name('about.delete');
 
 
 
