@@ -3,9 +3,6 @@ import { Head, Link, useForm } from "@inertiajs/vue3";
 
 const form = useForm({
     name: "",
-    mobile: "",
-    email: "",
-    description: "",
     image: null,
 });
 
@@ -15,7 +12,7 @@ defineProps({
 });
 
 const submit = () => {
-    form.post(route("studentprofile.store"));
+    form.post(route("category.store"));
 };
 </script>
 
@@ -42,63 +39,6 @@ const submit = () => {
                     />
                     <div class="text-red-400 text-sm mt-1" v-if="errors.name">
                         {{ errors.name }}
-                    </div>
-                </div>
-
-                <div>
-                    <label
-                        for="mobile"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                        >mobile</label
-                    >
-                    <input
-                        id="mobile"
-                        v-model="form.mobile"
-                        class="bg-gray-50 dark:bg-dark-primary border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3"
-                        placeholder="Enter mobile"
-                        rows="4"
-                    />
-                    <div class="text-red-400 text-sm mt-1" v-if="errors.mobile">
-                        {{ errors.mobile }}
-                    </div>
-                </div>
-
-                <div>
-                    <label
-                        for="email"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                        >email</label
-                    >
-                    <input
-                        id="email"
-                        v-model="form.email"
-                        class="bg-gray-50 dark:bg-dark-primary border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3"
-                        placeholder="Enter email"
-                        rows="4"
-                    />
-                    <div class="text-red-400 text-sm mt-1" v-if="errors.email">
-                        {{ errors.email }}
-                    </div>
-                </div>
-
-                <div>
-                    <label
-                        for="description"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                        >description</label
-                    >
-                    <textarea
-                        id="description"
-                        v-model="form.description"
-                        class="bg-gray-50 dark:bg-dark-primary border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3"
-                        placeholder="Enter description"
-                        rows="4"
-                    ></textarea>
-                    <div
-                        class="text-red-400 text-sm mt-1"
-                        v-if="errors.description"
-                    >
-                        {{ errors.description }}
                     </div>
                 </div>
 
@@ -136,3 +76,4 @@ const submit = () => {
 </template>
 
 <style></style>
+

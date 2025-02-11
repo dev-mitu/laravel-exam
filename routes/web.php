@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\StudentProfileController;
+use App\Http\Controllers\SubCategoryController;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
@@ -58,6 +60,23 @@ Route::delete('/About/delete/{about}', [AboutController::class, 'aboutDelete'])-
 
 
 
+
+Route::get('/', [CategoryController::class, 'Index'])->name('category');
+Route::get('/Category/Create', [CategoryController::class, 'CategoryCreate'])->name('category.create');
+Route::post('/Category/Store', [CategoryController::class, 'categoryStore'])->name('category.store');
+Route::get('/Category/{category}/Edit', [CategoryController::class, 'categoryEdit'])->name('category.edit');
+Route::put('/Category/Update/{category}', [CategoryController::class, 'categoryUpdate'])->name('category.update');
+Route::delete('/Category/delete/{category}', [CategoryController::class, 'categoryDelete'])->name('category.delete');
+
+
+
+
+Route::get('/subcategory', [SubCategoryController::class, 'Index'])->name('subcategories');
+Route::get('/subcategory/Create', [SubCategoryController::class, 'subcategoryCreate'])->name('subcategory.create');
+Route::post('/subcategory/Store', [SubCategoryController::class, 'subcategoryStore'])->name('subcategory.store');
+Route::get('/subcategory/{subcategory}/Edit', [SubCategoryController::class, 'subcategoryEdit'])->name('subcategory.edit');
+Route::put('/subcategory/Update/{subcategory}', [SubCategoryController::class, 'subcategoryUpdate'])->name('subcategory.update');
+Route::delete('/subcategory/delete/{subcategory}', [SubCategoryController::class, 'subcategorytDelete'])->name('subcategory.delete');
 
 
 
